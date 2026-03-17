@@ -1,0 +1,37 @@
+# .github/workflows/ml-pipeline.yml
+name: ML Model CI
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Linter Check
+        run: python -m compileall main.py src
+
+      - name: Model Dry Test
+        run: python -c "import torch; print('Model environment ready!')"
+
+      - name: Upload project docs
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-doc
+          path: README.md
