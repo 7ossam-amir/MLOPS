@@ -1,0 +1,22 @@
+{
+    "id":  "hossamamir/mlops-a2-gpu",
+    "title":  "mlops-a2-gpu",
+    "code_file":  "run_kaggle.py",
+    "language":  "python",
+    "kernel_type":  "script",
+    "is_private":  true,
+    "enable_gpu":  true,
+    "enable_internet":  true,
+    "competition_sources":  [
+
+                            ],
+    "kernel_sources":  [
+
+                       ],
+    "model_sources":  [
+
+                      ],
+    "dataset_sources":  [
+
+                        ]
+}

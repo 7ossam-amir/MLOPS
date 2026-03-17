@@ -1,0 +1,22 @@
+data:
+  path: digit-recognizer/train.csv
+
+
+training:
+  epochs: 10
+  batch_size: 128
+  learning_rate: 0.002
+  latent_dim: 64
+
+runtime:
+  device: auto
+
+output:
+  dir: outputs
+  num_samples: 16
+
+mlflow:
+  enabled: true
+  tracking_uri: mlruns
+  experiment_name: mlops_a2_gan/5th test
+  run_name: "4th test"
